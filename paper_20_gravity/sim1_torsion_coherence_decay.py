@@ -747,7 +747,7 @@ def main():
             log()
             log(f"  The inverse square law of gravity emerges from the geometry")
             log(f"  of octonionic torsion coupling on a 3-dimensional lattice.")
-            log(f"  This is Paper 15.")
+            log(f"  This is Paper 20.")
 
     log()
     elapsed = (datetime.now() - start_time).total_seconds()

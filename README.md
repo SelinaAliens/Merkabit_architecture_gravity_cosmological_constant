@@ -6,15 +6,15 @@ Simulation code for the Merkabit framework Papers 20-24: deriving gravity, the c
 
 ## Results Summary
 
-| Constant | Formula | Derived | Measured | Accuracy |
-|----------|---------|---------|----------|----------|
-| Lambda | sqrt(3/2) x exp(-47x78x12 / 25pi) | 2.876e-122 | 2.87e-122 | 0.2% |
-| alpha^-1 | 168 - 28 - 3 | 137 | 137.036 | 0.026% |
-| v (Higgs) | m_P x exp(-12pi - 1/72) / 2 | 255.1 GeV | 255.0 GeV | 0.056% |
-| v_phys | v_tree x 28/29 | 246.3 GeV | 246.22 GeV | 0.05% |
-| m_W | v x 47/144 | 80.40 GeV | 80.377 GeV | 0.03% |
-| G_eff | 1/N_spinor^2 = 1/4 | 0.250 | 0.254 | 1.7% |
-| gamma_Berry | 47/50 | 0.940 | 0.9400068 | 7 ppm |
+| Constant | Formula | Algebraic | Simulated/Measured | Accuracy |
+|----------|---------|-----------|-------------------|----------|
+| Lambda | sqrt(3/2) x exp(-47x78x12 / 25pi) | 2.876e-122 | 2.87e-122 (Planck 2018) | 0.2% |
+| alpha^-1 | 168 - 28 - 3 | 137 | 137.036 (CODATA) | 0.026% |
+| v (Higgs) | m_P x exp(-12pi - 1/72) / 2 | 255.1 GeV | 255.0 GeV (tree-level) | 0.056% |
+| v_phys | v_tree x 28/29 | 246.3 GeV | 246.22 GeV (PDG) | 0.05% |
+| m_W | v x 47/144 | 80.40 GeV | 80.377 GeV (PDG) | 0.03% |
+| G_eff | 1/N_spinor^2 = 1/4 | 0.2500 (algebraic) | 0.2542 (Sim 3) | 1.7% |
+| gamma_Berry | 47/50 | 0.940000 (algebraic) | 0.9400068 (Sim 12) | 7 ppm |
 
 ## Structure
 
