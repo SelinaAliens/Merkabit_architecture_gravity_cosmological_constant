@@ -1,0 +1,141 @@
+
+================================================================
+  SIMULATION 14B: WEYL ANTI-GRAVITY IN THE OCTONIONIC ENVELOPE
+  8-channel merkabit with Fano plane inter-channel coupling
+================================================================
+
+  --- bipartite (0/8 Weyl channels) ---
+  Mask: [0 0 0 0 0 0 0 0]
+     r    C_normal      C_weyl       Ratio     G_ratio
+     1    0.980568    0.980568    1.000000    1.000000
+     2    0.951491    0.951491    1.000000    1.000000
+     3    0.922145    0.922145    1.000000    1.000000
+     5    0.863295    0.863295    1.000000    1.000000
+     8    0.774971    0.774971    1.000000    1.000000
+  Mean G_Weyl/G_normal = 1.000000
+
+  --- single_channel (1/8 Weyl channels) ---
+  Mask: [0 1 0 0 0 0 0 0]
+     r    C_normal      C_weyl       Ratio     G_ratio
+     1    0.980568    0.805931    0.821902    0.675523
+     2    0.951491    0.781124    0.820947    0.673955
+     3    0.922145    0.755900    0.819719    0.671939
+     5    0.863295    0.705263    0.816942    0.667395
+     8    0.774971    0.629234    0.811945    0.659255
+  Mean G_Weyl/G_normal = 0.669613
+
+  --- WTe2 (2/8 Weyl channels) ---
+  Mask: [0 1 1 0 0 0 0 0]
+     r    C_normal      C_weyl       Ratio     G_ratio
+     1    0.980568    0.666694    0.679906    0.462272
+     2    0.951491    0.645898    0.678827    0.460806
+     3    0.922145    0.624525    0.677252    0.458670
+     5    0.863295    0.581553    0.673643    0.453795
+     8    0.774971    0.516997    0.667119    0.445047
+  Mean G_Weyl/G_normal = 0.456118
+
+  --- TaAs (4/8 Weyl channels) ---
+  Mask: [0 1 0 1 0 1 0 1]
+     r    C_normal      C_weyl       Ratio     G_ratio
+     1    0.980568    0.441323    0.450068    0.202561
+     2    0.951491    0.428158    0.449986    0.202487
+     3    0.922145    0.414080    0.449040    0.201637
+     5    0.863295    0.385620    0.446684    0.199526
+     8    0.774971    0.342776    0.442308    0.195636
+  Mean G_Weyl/G_normal = 0.200370
+
+  --- AlCuFe (5/8 Weyl channels) ---
+  Mask: [0 1 1 1 1 1 0 0]
+     r    C_normal      C_weyl       Ratio     G_ratio
+     1    0.980568    0.337487    0.344175    0.118456
+     2    0.951491    0.328073    0.344798    0.118886
+     3    0.922145    0.317576    0.344388    0.118603
+     5    0.863295    0.296234    0.343143    0.117747
+     8    0.774971    0.264040    0.340710    0.116083
+  Mean G_Weyl/G_normal = 0.117955
+
+  --- full_monopole (7/8 Weyl channels) ---
+  Mask: [0 1 1 1 1 1 1 1]
+     r    C_normal      C_weyl       Ratio     G_ratio
+     1    0.980568    0.129816    0.132388    0.017527
+     2    0.951491    0.127902    0.134423    0.018070
+     3    0.922145    0.124567    0.135084    0.018248
+     5    0.863295    0.117463    0.136063    0.018513
+     8    0.774971    0.106569    0.137513    0.018910
+  Mean G_Weyl/G_normal = 0.018253
+
+============================================================================
+  COMPARISON: OCTONIONIC ENVELOPE vs SINGLE-CHANNEL
+============================================================================
+
+  Crystal            Weyl/8 G_oct/G_norm   vs Sim14  Enhancement
+  bipartite             0/8      1.000000      1.1148       -0.0000x
+  single_channel        1/8      0.669613      0.7465        3.2076x
+  WTe2                  2/8      0.456118      0.5085        5.2804x
+  TaAs                  4/8      0.200370      0.2234        7.7634x
+  AlCuFe                5/8      0.117955      0.1315        8.5635x
+  full_monopole         7/8      0.018253      0.0203        9.5315x
+
+============================================================================
+  NON-ASSOCIATIVE AMPLIFICATION ANALYSIS
+============================================================================
+
+  Crystal             Weyl ch  Fano affected  Fano intact    Ratio
+  bipartite               0/7               0             7     1.000
+  single_channel          1/7               3             4     0.571
+  WTe2                    2/7               5             2     0.286
+  TaAs                    4/7               6             1     0.143
+  AlCuFe                  5/7               7             0     0.000
+  full_monopole           7/7               7             0     0.000
+
+============================================================================
+  PHYSICAL PREDICTIONS WITH OCTONIONIC ENVELOPE
+============================================================================
+
+  TaAs (4/8 Weyl channels):
+    G_oct/G_normal = 0.200370
+    delta_G/G = -0.799630 (-79.96%)
+    At f=0.10: delta_m = -7.9963e-02 g = -79963.03 ug
+
+  Comparison to single-channel (Sim 14):
+    Sim 14: delta_G/G = -0.1030, delta_m = -1.0300e-02 g
+    Octonionic: delta_G/G = -0.7996, delta_m = -7.9963e-02 g
+    Octonionic / single-channel = 7.7634x
+
+============================================================================
+  INTERPRETATION
+============================================================================
+
+  Pattern: G_ratio vs number of Weyl channels:
+  Weyl/8     G_ratio   delta_G/G
+     0/8     1.000000    0.000000  (bipartite)
+     1/8     0.669613   -0.330387  (single_channel)
+     2/8     0.456118   -0.543882  (WTe2)
+     4/8     0.200370   -0.799630  (TaAs)
+     5/8     0.117955   -0.882045  (AlCuFe)
+     7/8     0.018253   -0.981747  (full_monopole)
+
+  --- Fitting G_ratio vs Weyl fraction ---
+  Linear model: G = 1 - 1.4896 * (n_weyl/8)
+    bipartite         : predicted 1.0000, actual 1.0000, diff 0.0000
+    single_channel    : predicted 0.8138, actual 0.6696, diff -0.1442
+    WTe2              : predicted 0.6276, actual 0.4561, diff -0.1715
+    TaAs              : predicted 0.2552, actual 0.2004, diff -0.0549
+    AlCuFe            : predicted 0.0690, actual 0.1180, diff 0.0489
+    full_monopole     : predicted -0.3034, actual 0.0183, diff 0.3216
+
+  Quadratic model: G = (1 - n_weyl/8)^2
+    bipartite         : predicted 1.0000, actual 1.0000, diff 0.0000
+    single_channel    : predicted 0.7656, actual 0.6696, diff -0.0960
+    WTe2              : predicted 0.5625, actual 0.4561, diff -0.1064
+    TaAs              : predicted 0.2500, actual 0.2004, diff -0.0496
+    AlCuFe            : predicted 0.1406, actual 0.1180, diff -0.0227
+    full_monopole     : predicted 0.0156, actual 0.0183, diff 0.0026
+
+  The octonionic envelope modifies the gravitational coupling through:
+  1. Direct channel reduction: fewer bipartite channels = less coupling
+  2. Fano triple disruption: broken triples lose non-associative correction
+  3. V-spinor leakage: Fano coupling can inject v-content into Weyl channels
+
+  Simulation completed in 26.8s
+============================================================================
