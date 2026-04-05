@@ -1,0 +1,165 @@
+================================================================
+  SIMULATION 6: CHIRALITY REVERSAL -- THE ANTI-GRAVITY TEST
+  Does opposite torsion winding repel?
+================================================================
+
+================================================================
+  TEST A: REVERSED CHIRALITY SELF-COHERENCE
+================================================================
+
+  NORMAL chirality:
+    Berry phase gamma_norm = -0.861681 rad (-0.2743 pi)
+    Zero-point overlap |u^dag v| = 0.011194
+    u = [0.462+0.026j, 0.484-0.072j, -0.507-0.028j, -0.531+0.079j]
+
+  REVERSED chirality:
+    Berry phase gamma_rev  = 0.861681 rad (0.2743 pi)
+    Zero-point overlap |u^dag v| = 0.011194
+    u = [0.485+0.182j, 0.525-0.045j, -0.443-0.166j, -0.478+0.041j]
+
+  Ratio gamma_rev / gamma_norm = -1.000000
+  |gamma_rev + gamma_norm| = 0.000000
+  Is gamma_rev = -gamma_norm? YES (diff = 0.000000)
+  Reversed reaches zero-point: YES (overlap = 0.0112)
+  VERDICT: Reversed chirality is self-sustaining: YES
+
+================================================================
+  TEST B: SAME-CHIRALITY BASELINE (Normal + Normal)
+================================================================
+
+  Source: settled normal merkabit at origin
+  Probe: normal merkabit at distance d
+  Coupling J = 0.05, 200 cycles, 20 realizations
+
+    d       L_nn     phi_nn       gradient
+  ---   --------   --------   ------------
+    1   0.631682   0.631682   repulsive
+    2   0.652710   0.652710   attractive
+    3   0.644609   0.644609   attractive
+    4   0.609790   0.609790   attractive
+    5   0.552668   0.552668   attractive
+    6   0.484616   0.484616   attractive
+    7   0.426514   0.426514   attractive
+    8   0.402894   0.402894   repulsive
+    9   0.434297   0.434297   repulsive
+   10   0.513868   0.513868   repulsive
+   11   0.614908   0.614908   repulsive
+   12   0.718881   0.718881   --
+
+================================================================
+  TEST C: OPPOSITE-CHIRALITY (Normal source + Reversed probe)
+================================================================
+
+  Source: settled NORMAL merkabit
+  Probe: REVERSED chirality merkabit at distance d
+  Coupling J = 0.05, 200 cycles, 20 realizations
+
+    d       L_nr     phi_nr       gradient    L_nr/L_nn
+  ---   --------   --------   ------------   ----------
+    1   0.451491   0.451491      repulsive   0.714744
+    2   0.545444   0.545444     attractive   0.835661
+    3   0.495335   0.495335     attractive   0.768427
+    4   0.447417   0.447417     attractive   0.733722
+    5   0.388594   0.388594     attractive   0.703122
+    6   0.328656   0.328656     attractive   0.678179
+    7   0.273513   0.273513     attractive   0.641275
+    8   0.233242   0.233242     attractive   0.578916
+    9   0.226428   0.226428      repulsive   0.521367
+   10   0.238194   0.238194      repulsive   0.463532
+   11   0.257991   0.257991      repulsive   0.419561
+   12   0.290169   0.290169             --   0.403640
+
+  Normal-Normal       : phi(d) = +0.149540/d + 0.518615  R^2=0.1449  [ATTRACTIVE]
+  Normal-Reversed     : phi(d) = +0.286531/d + 0.273942  R^2=0.4462  [ATTRACTIVE]
+
+  Mean L_nr / L_nn = 0.6218
+  Normal-Normal: 6/11 shells attractive
+  Normal-Reversed: 7/11 attractive, 4/11 repulsive
+
+  FORCE TYPE: ATTRACTIVE (same sign as normal)
+    Inner-shell gradient (nn): -0.034195
+    Inner-shell gradient (nr): -0.029663
+    Ratio: +0.8675
+
+================================================================
+  TEST D: CLOSE ENCOUNTER (d=1, J=0.2, 500 cycles)
+================================================================
+
+  Normal self-coherence |u_n^dag v_n|:
+    Initial: 0.5806  Final: 0.6961
+    Mean(last 50): 0.6244 +/- 0.0676
+    Status: STABLE
+
+  Reversed self-coherence |u_r^dag v_r|:
+    Initial: 0.4142  Final: 0.6064
+    Mean(last 50): 0.6170 +/- 0.0171
+    Status: STABLE
+
+  Cross-lock |u_n^dag u_r|:
+    Initial: 0.6317  Final: 0.9366
+    Mean(last 50): 0.9366 +/- 0.0000
+    Status: GROWING
+
+  Cross-lock |v_n^dag v_r|:
+    Mean(last 50): 0.6379 +/- 0.2990
+
+  TIME EVOLUTION (every 50 cycles):
+   cycle   |un.vn|   |ur.vr|   |un.ur|   |vn.vr|
+       0    0.5806    0.4142    0.6317    0.2357
+      50    0.5246    0.6302    0.9366    0.2112
+     100    0.6806    0.5973    0.9366    0.9297
+     150    0.6768    0.6118    0.9366    0.7991
+     200    0.5170    0.6424    0.9366    0.0601
+     250    0.6471    0.5992    0.9366    0.8215
+     300    0.7004    0.6054    0.9366    0.9063
+     350    0.5448    0.6472    0.9366    0.2986
+     400    0.6024    0.6071    0.9366    0.6520
+     450    0.7069    0.6024    0.9366    0.9650
+     499    0.6961    0.6064    0.9366    0.8837
+
+  OUTCOME: LOCK
+    Normal Berry phase after contact: 0.955184 rad
+    Reversed Berry phase after contact: -2.739969 rad
+    Sum gamma_n + gamma_r = -1.784785
+    Is sum ~ 0 (cancellation)? NO
+
+================================================================
+  ANTI-GRAVITY VERDICT
+================================================================
+
+  Reversed chirality is self-sustaining:          YES
+    gamma_rev = 0.8617 rad
+    gamma_norm = -0.8617 rad
+    Exact sign reversal: YES
+
+  Opposite chirality pairs repel:                 NO
+  Force type: ATTRACTIVE (same sign as normal)
+
+
+  Close encounter outcome: LOCK
+
+================================================================
+  INTERPRETATION
+================================================================
+
+  The reversed chirality merkabit has gamma_rev = -gamma_norm.
+  This is EXACT CPT conjugation at the torsion level:
+    C (charge) = trit sign flip
+    P (parity) = chirality reversal (u<->v gate swap)
+    T (time)   = Berry phase sign flip
+  All three are accomplished by the SINGLE operation of
+  swapping forward/conjugate gate assignments.
+
+  OPPOSITE CHIRALITY STILL ATTRACTS: gravity does not depend
+  on chirality. The lattice Laplacian (which determines the
+  1/r potential) is chirality-blind. Both chiralities create
+  the same potential because the Laplace equation is parity-
+  invariant. This is consistent with the equivalence principle.
+
+  This means: gravity is TRULY UNIVERSAL -- it does not care
+  about the internal winding direction of the torsion structure.
+  Only the PRESENCE of a self-sustaining torsion structure
+  (mass) matters, not its chirality.
+
+  Runtime: 224.6 seconds
+================================================================

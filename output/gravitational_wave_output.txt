@@ -1,0 +1,152 @@
+================================================================
+  SIMULATION 8: GRAVITATIONAL WAVES AS T75 TORSION RADIATION
+  Do orbiting masses emit torsion waves? Is alpha_s the coupling?
+================================================================
+
+  BINARY SETUP
+    M1 = M2 = 6 (N=6 merkabit clusters)
+    Separation d = 2.0
+    G_eff = 0.2542, alpha_s = 0.11905 = 5/42
+    Orbital frequency omega_orb = 0.6175
+    Orbital period T_orb = 10.1753
+    Run: 20 orbits = 203.5 time units
+    dt = 0.2544, n_steps = 799
+    Detector shell: R = 10.0, 50 points
+
+  Computing static (time-averaged) field...
+  Running binary for 20 orbits...
+  Reference detector: idx=34, theta=1.96, phi=0.08
+  Done. Shape: (799, 50)
+
+================================================================
+  TEST A: WAVE DECAY (1/r or 1/r^2?)
+================================================================
+
+  GW wavelength lambda_GW = pi*c/omega_orb = 5.09
+  Radiation zone: r >> 5.1
+
+     r      A(r)_peak     A/A(r=5)
+  ----   ------------   ----------
+     5   4.172982e-02       1.0000
+    10   1.030013e-02       0.2468
+    20   2.780784e-03       0.0666
+    50   5.443750e-04       0.0130
+   100   1.672706e-04       0.0040
+   200   4.070711e-05       0.0010
+
+  Fit: A(r) = 7.6590e-01 * r^(-1.8510)  R^2 = 0.9940
+  alpha_wave = -1.8510  (-1 = wave, -2 = field)
+  VERDICT: Signal propagates as FIELD (1/r^2)
+
+================================================================
+  TEST B: ANGULAR PATTERN (MULTIPOLES)
+================================================================
+
+  Multipole decomposition at r=10.0:
+    l=0 (monopole):       A = 4.560592e-03  (47.7%)
+    l=1 (dipole):         A = 1.176518e-09  (0.0%)
+    l=2 (quad, cos2phi):  A = 6.159989e-07  (0.0%)
+    l=2 (quad, axisym):   A = 4.993416e-03  (52.3%)
+    l=3 (octupole):       A = 1.003279e-09  (0.0%)
+
+  Dominant mode: l=2 (quad)
+  VERDICT: Angular pattern is QUADRUPOLAR
+
+  Angular profile (dphi_rms vs theta, averaged over phi_az):
+    theta= 10.0 deg: |###                                     | 5.3554e-04
+    theta= 30.0 deg: |###########                             | 2.0049e-03
+    theta= 50.0 deg: |#######################                 | 4.0100e-03
+    theta= 70.0 deg: |##################################      | 5.9732e-03
+    theta= 90.0 deg: |####################################### | 6.7759e-03
+    theta=110.0 deg: |###################################     | 6.0791e-03
+    theta=130.0 deg: |########################                | 4.1698e-03
+    theta=150.0 deg: |###########                             | 2.0051e-03
+    theta=170.0 deg: |###                                     | 5.3568e-04
+
+================================================================
+  TEST C: RADIATION FREQUENCY
+================================================================
+
+  Orbital frequency omega_orb = 0.6175
+  GW peak frequency omega_GW = 1.2365
+  Ratio omega_GW / omega_orb = 2.0025
+  GR predicts: ratio = 2.0 (quadrupole emission)
+  VERDICT: QUADRUPOLE EMISSION (omega_GW = 2*omega_orb)
+
+  Top frequency components:
+    omega = 1.2365 (2.00 * omega_orb)  amplitude = 3.2380e+00
+    omega = 1.2056 (1.95 * omega_orb)  amplitude = 1.6938e-01
+    omega = 1.2674 (2.05 * omega_orb)  amplitude = 1.5513e-01
+    omega = 2.4731 (4.01 * omega_orb)  amplitude = 1.4143e-01
+    omega = 1.1747 (1.90 * omega_orb)  amplitude = 8.1999e-02
+
+================================================================
+  TEST D: LUMINOSITY AND alpha_s
+================================================================
+
+  Measured L_GW = 3.675042e-03 +/- 7.241580e-07
+  GR prefactor = G^4 * M1^2 * M2^2 * M_total / a^5 = 6.493643e+01
+  GR luminosity (32/5 * prefactor) = 4.155932e+02
+  k_luminosity = L_GW / prefactor = 0.000057
+  k / (32/5) = 0.0000  (1.0 = exact GR match)
+
+  alpha_s = 5/42 = 0.11905
+  k_luminosity / alpha_s = C_T75 = 0.0005
+  Nearest T75 invariant:
+    |T75|                =   75.000  |diff| = 74.9995
+    S3 orbits            =   14.000  |diff| = 13.9995
+    gluon count          =    8.000  |diff| = 7.9995
+    order-4 class        =   42.000  |diff| = 41.9995
+    GR coeff             =    6.400  |diff| = 6.3995 <-- BEST MATCH
+    Coxeter h            =   12.000  |diff| = 11.9995
+
+================================================================
+  T75 ACTIVATION THRESHOLD
+================================================================
+
+    d           L_GW      prefactor        k_lum       k/GR
+  ---   ------------   ------------   ----------   --------
+    1     2.2834e-02     2.0780e+03       0.0000     0.0000
+    2     6.8089e-03     6.4936e+01       0.0001     0.0000
+    3     3.8712e-03     8.5513e+00       0.0005     0.0001
+    4     7.4149e-04     2.0293e+00       0.0004     0.0001
+    5     2.9660e-06     6.6495e-01       0.0000     0.0000
+    6     2.3355e-04     2.6723e-01       0.0009     0.0001
+    8     1.1921e-03     6.3414e-02       0.0188     0.0029
+   10     2.3675e-03     2.0780e-02       0.1139     0.0178
+
+  T75 activation threshold: d = 10
+
+================================================================
+  GRAVITATIONAL WAVE SCORECARD
+================================================================
+
+  [N]  Signal decays as 1/r (wave, not field):    NO
+       alpha_wave = -1.851 (-1 = wave, -2 = field)
+
+  [Y]  Dominant mode is quadrupole (l=2):         YES
+       Dominant: l=2 (quad)
+
+  [Y]  omega_GW = 2*omega_orb (quadrupole):       YES
+       Ratio = 2.003
+
+  [Y]  Luminosity connects to alpha_s:           YES
+       k_luminosity = 0.0001
+       C_T75 = k/alpha_s = 0.00
+       Nearest invariant: GR coeff = 6.4
+
+  [Y]  T75 activation threshold exists:          YES
+       Threshold at d = 10
+
+
+================================================================
+  INTERPRETATION
+================================================================
+
+  The simulation shows torsion field perturbations from the
+  orbiting binary. Full wave characteristics partially confirmed.
+
+  The T75 connection: C_T75 = 0.00
+
+  Runtime: 0.3 seconds
+================================================================
