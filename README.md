@@ -1,6 +1,6 @@
 # merkabit-architecture
 
-Simulation code for the Merkabit framework Papers 20-24: deriving gravity, the cosmological constant, Newton's constant, and the gauge hierarchy from E6 Coxeter geometry on the Eisenstein lattice.
+Simulation code for the Merkabit framework Papers 20-23: deriving gravity, orbital quantisation, CPT, the pentachoric transient, the cosmological constant, Newton's constant, and the gauge hierarchy from E6 Coxeter geometry on the Eisenstein lattice.
 
 **Zero free parameters.** Every fundamental constant derived from `{h=12, dim(E6)=78, dim(D4)=28, rank=6, |PSL(2,7)|=168, pi}`.
 
@@ -22,12 +22,12 @@ Simulation code for the Merkabit framework Papers 20-24: deriving gravity, the c
 core/                    -- Shared infrastructure (gates, states, Berry phase, R-locking test)
 paper_20_gravity/        -- Sims 1-6: torsion gravity, binding, dark matter, orbits, CPT
 paper_21_quantisation/   -- Sims 7-11: light bending, GW, dual-spinor, pentachoric transient
-paper_23_lambda/         -- Sims 10-12: cosmological constant, gamma = 47/50
-paper_24_hierarchy/      -- Sims 13-14: G_eff, hierarchy, Weyl anti-gravity
+paper_22_lambda/         -- Sims 10-12: cosmological constant, gamma = 47/50
+paper_23_hierarchy/      -- Sims 13-14: G_eff, hierarchy, Weyl anti-gravity
 output/                  -- Simulation output files
 ```
 
-### Paper 20 Gravity Simulations (new)
+### Paper 20: Gravity Simulations
 
 | Script | Simulation | Key Result |
 |--------|------------|------------|
@@ -37,7 +37,7 @@ output/                  -- Simulation output files
 | sim5_orbital_quantisation.py | Coxeter-resonant orbital quantisation | T/h = integer at r=4,12. Trough at r~8 |
 | sim6_chirality_reversal.py | Chirality reversal / anti-gravity test | gamma_rev = -gamma_norm exact. Gravity chirality-blind |
 
-### Paper 21 GR Correction Simulations (new)
+### Paper 21: Orbital Quantisation, CPT, and the Pentachoric Transient
 
 | Script | Simulation | Key Result |
 |--------|------------|------------|
@@ -72,17 +72,17 @@ python paper_21_quantisation/sim11_pentachoric_transient.py # The phi transient
 # Architecture verification
 python core/R_locking_test.py                              # Two R's at two scales
 
-# Paper 23-24
-python paper_23_lambda/sim10_monopole.py                   # Lambda
-python paper_24_hierarchy/sim13_closure_scale.py            # Hierarchy
+# Paper 22-23
+python paper_22_lambda/sim10_monopole.py                   # Lambda
+python paper_23_hierarchy/sim13_closure_scale.py            # Hierarchy
 ```
 
 ## Papers
 
 - **Paper 20**: Gravity and Dark Matter from the Eisenstein Lattice (Sims 1-6: 1/r potential, binding, sedenion dark matter, Coxeter orbits, CPT)
-- **Paper 21**: GR Corrections and the Pentachoric Transient (Sims 7-11: light bending k=4, gravitational waves, Berry=spatial theorem, phi transient)
-- **Paper 23**: The Cosmological Constant from Vacuum Monopole Suppression and the Berry Phase as Geometric Complement
-- **Paper 24**: Newton's Constant, the Ternary-Binary Coupling, and the Hierarchy as a Winding Problem
+- **Paper 21**: Orbital Quantisation, CPT, and the Pentachoric Transient (Sims 7-11: light bending k=4, gravitational waves, Berry=spatial theorem, phi transient, LIGO prediction)
+- **Paper 22**: The Cosmological Constant from Vacuum Monopole Suppression and the Berry Phase as Geometric Complement
+- **Paper 23**: Newton's Constant, the Ternary-Binary Coupling, and the Hierarchy as a Winding Problem
 
 All papers available on [Zenodo](https://zenodo.org/communities/merkabit).
 
