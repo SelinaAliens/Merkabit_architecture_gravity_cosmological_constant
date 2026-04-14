@@ -914,7 +914,15 @@ def test_decay_mode(stability_results):
         else:
             radiation = "beat frequency radiation at 1/LCM(h',12)"
 
-        bipartite_berry = -0.94  # reference from earlier sims
+        bipartite_berry = -0.94  # reference from earlier sims -- SEE CORRECTION NOTE
+        # CORRECTION NOTE (Paper 27 settling study, April 2026):
+        #   This value (-0.94) is the ORIGIN of gamma_Berry = 0.94 used throughout
+        #   Papers 22-23. It was a rounded reference; the actual computed value is
+        #   |gamma_v(|0>)|/(2*pi) = 0.948. The value 0.9400068 that matches Lambda_obs
+        #   exactly was reverse-engineered (see sim12_residual.py lines 200-222).
+        #   The 0.85% gap enters the Lambda EXPONENT (coefficient ~298), producing
+        #   a factor of ~10 in the cosmological constant.
+        #   See Paper 27, Section 9.5 for full provenance chain.
         print(f"    Berry phase at decay: {gamma:.4f} rad")
         print(f"    Bipartite reference:  {bipartite_berry:.4f} rad")
         print(f"    Match: {abs(gamma - bipartite_berry) < 0.3}")

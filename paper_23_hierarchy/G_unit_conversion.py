@@ -50,7 +50,16 @@ E_P = m_P * c**2
 # ============================================================================
 
 G_eff       = 0.2542         # lattice gravitational coupling (Sim 3)
-gamma_Berry = 0.94           # Berry phase (rad) from ouroboros cycle
+gamma_Berry = 0.94           # Berry phase (rad) -- SEE CORRECTION NOTE BELOW
+# CORRECTION NOTE (Paper 27 settling study, April 2026):
+#   gamma_Berry = 0.94 was a rounded reference value from Simulation 10.
+#   The actual computed value is |gamma_v(|0>)|/(2*pi) = 0.948 (single-cycle).
+#   The value 0.9400068 that matches Lambda_obs exactly was reverse-engineered.
+#   The 0.85% gap (0.948 vs 0.940) enters linearly in unit conversions here
+#   (not exponentially as in the Lambda formula), so the effect on G_SI is <1%.
+#   The core result G = 1/N_spinor^2 = 1/4 = 0.25 is algebraic and unaffected.
+#   Resolution: identify which cycle count defines the physical Berry phase.
+#   See Paper 27, Section 9.5 and Paper 22 correction note.
 h_coxeter   = 12             # Coxeter number h(E6)
 dim_E6      = 78             # dimension of E6
 dim_oct     = 8              # octonion channels

@@ -31,7 +31,14 @@ NUM_GATES = 5
 STEP_PHASE = 2 * np.pi / COXETER_H
 OUROBOROS_GATES = ['S', 'R', 'T', 'F', 'P']
 
-GAMMA_TARGET = 47.0 / 50.0  # = 0.94
+GAMMA_TARGET = 47.0 / 50.0  # = 0.94 -- SEE CORRECTION NOTE BELOW
+# CORRECTION NOTE (Paper 27 settling study, April 2026):
+#   The target 47/50 = 0.94 was a rounded reference from Simulation 10.
+#   The computed value |gamma_v(|0>)|/(2*pi) = 0.948 (single-cycle).
+#   This simulation searches for the coupling J that produces gamma = 0.94;
+#   the correct target may be 0.948. The qualitative result (critical J exists)
+#   is unaffected; the numerical value of J_crit shifts by ~1%.
+#   See Paper 27, Section 9.5.
 
 # Physical scales
 M_PLANCK_GEV = 1.22089e19    # Planck mass in GeV
